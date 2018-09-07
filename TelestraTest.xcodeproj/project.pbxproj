@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9004E9D8213FC9F100C2B66D /* TelestraTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004E9D7213FC9F100C2B66D /* TelestraTestTests.swift */; };
+		90091DBE214290B200CB766B /* TelestraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DBD214290B200CB766B /* TelestraViewModel.swift */; };
+		90091DC0214290EE00CB766B /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DBF214290EE00CB766B /* TestTableViewCell.swift */; };
+		90091DC22142911B00CB766B /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DC12142911B00CB766B /* TestModel.swift */; };
+		90091DC42142914200CB766B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DC32142914200CB766B /* Service.swift */; };
 		90FA1331212D4398000B02EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA1330212D4398000B02EF /* AppDelegate.swift */; };
 		90FA1333212D4398000B02EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FA1332212D4398000B02EF /* ViewController.swift */; };
 		90FA1338212D4398000B02EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FA1337212D4398000B02EF /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 		9004E9D5213FC9F100C2B66D /* TelestraTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelestraTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9004E9D7213FC9F100C2B66D /* TelestraTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelestraTestTests.swift; sourceTree = "<group>"; };
 		9004E9D9213FC9F100C2B66D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90091DBD214290B200CB766B /* TelestraViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelestraViewModel.swift; sourceTree = "<group>"; };
+		90091DBF214290EE00CB766B /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		90091DC12142911B00CB766B /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		90091DC32142914200CB766B /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		90FA132D212D4398000B02EF /* TelestraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelestraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FA1330212D4398000B02EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90FA1332212D4398000B02EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +104,8 @@
 		90FA1346212F28AF000B02EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				90091DC12142911B00CB766B /* TestModel.swift */,
+				90091DC32142914200CB766B /* Service.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -103,6 +113,7 @@
 		90FA1347212F28B7000B02EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				90091DBF214290EE00CB766B /* TestTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -110,6 +121,7 @@
 		90FA1348212F28C0000B02EF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				90091DBD214290B200CB766B /* TelestraViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -232,7 +244,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90FA1333212D4398000B02EF /* ViewController.swift in Sources */,
+				90091DC0214290EE00CB766B /* TestTableViewCell.swift in Sources */,
+				90091DC22142911B00CB766B /* TestModel.swift in Sources */,
+				90091DBE214290B200CB766B /* TelestraViewModel.swift in Sources */,
 				90FA1331212D4398000B02EF /* AppDelegate.swift in Sources */,
+				90091DC42142914200CB766B /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
