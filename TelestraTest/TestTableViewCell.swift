@@ -36,6 +36,7 @@ class TestTableViewCell: UITableViewCell {
         imageVw.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         imageVw.widthAnchor.constraint(equalToConstant: 100).isActive = true
         imageVw.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        imageVw.contentMode = .scaleAspectFit
     }
     
     required init?(coder aDecoder: NSCoder) {
