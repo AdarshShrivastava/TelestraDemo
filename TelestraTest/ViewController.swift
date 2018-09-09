@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,telestraViewModelDelegate{
     
     var headerView:UIView!
     var titleLabel:UILabel!
@@ -11,11 +11,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var descriptionArr = [String]()
     var imageArr = [String]()
 
+     var viewModelObject = TelestraViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.imageTableView.reloadData()
-        }
+       viewModelObject.delegate = self
         self.view.backgroundColor = UIColor.white
         
         refreshControl = UIRefreshControl()
@@ -65,6 +64,33 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         refreshControl.endRefreshing()
     }
     
+    func title(data:Title){
+        DispatchQueue.main.async {
+           self.titleLabel.text = data.mainTitle
+        }
+        
+    }
+    
+    func getTableData(data: [TestModel]){
+        for items in data{
+            if let description = items.description
+            {
+                self.descriptionArr.append(description)
+            }
+            if let image = items.image
+            {
+                self.imageArr.append(image)
+            }
+            if let title = items.title
+            {
+                self.titleArr.append(title)
+            }  
+        }
+        DispatchQueue.main.async {
+            self.imageTableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imageArr.count
     }
@@ -74,20 +100,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.nameLabel.text = self.titleArr[indexPath.row]
         cell.nameLabel.backgroundColor = UIColor.gray
         cell.descriptionLabel.text = self.descriptionArr[indexPath.row]
-        let imageString = self.imageArr[indexPath.row]
-        let url = URL(string: imageString)
-        if let data = try? Data(contentsOf: url!)
-        {
-            if let finalimg:UIImage = UIImage(data: data){
-                DispatchQueue.main.async{
-                    cell.imageVw.image = finalimg
+        DispatchQueue.global(qos: .background).async {
+            let value = self.imageArr[indexPath.row]
+            let url = URL(string: value)
+            if let data = try? Data(contentsOf: url!)
+            {
+                if let finalimg:UIImage = UIImage(data: data){
+                    DispatchQueue.main.async{
+                        cell.imageVw.image = finalimg
+                    }
                 }
+                
             }
             
         }
         cell.sizeToFit()
         return cell
     }
-    
-    
 }
