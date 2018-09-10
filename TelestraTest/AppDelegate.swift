@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import ReachabilitySwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    //var reachibilityManager = ReachibilityManager()
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.rootViewController = ViewController()
         self.window?.makeKeyAndVisible()
+        
+        ReachibilityManager.shared.startMonitoring()
+        
         return true
     }
 
@@ -33,10 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        
+        // Stops monitoring network reachability status changes
+        ReachibilityManager.shared.stopMonitoring()
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        // Starts monitoring network reachability status changes
+        ReachibilityManager.shared.startMonitoring()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
