@@ -10,13 +10,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var titleArr: [String] = []
     var descriptionArr = [String]()
     var imageArr = [String]()
-
-     var viewModelObject = TelestraViewModel()
+    
+    var viewModelObject = TelestraViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       viewModelObject.delegate = self
+        viewModelObject.delegate = self
         self.view.backgroundColor = UIColor.white
         
+        //Adding refreshing control
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -25,6 +27,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         headerView.backgroundColor = UIColor.red
         self.view.addSubview(headerView)
         
+        
+        //Adding Table View to load the data with
         imageTableView = UITableView()
         imageTableView.register(TestTableViewCell.self, forCellReuseIdentifier:"Cell")
         imageTableView.dataSource = self
@@ -33,23 +37,27 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         imageTableView.rowHeight = UITableViewAutomaticDimension
         self.view.addSubview(imageTableView)
         
+        //Adding Label for title
         titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 20)
         headerView.addSubview(titleLabel)
         
+        //Autolayout for header
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         headerView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         headerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:1).isActive = true
         headerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
         
+        //Autolayout for title in
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 0.5).isActive = true
         titleLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier:0.5).isActive = true
         
+        //Autolayout for TableView
         imageTableView.translatesAutoresizingMaskIntoConstraints = false
         imageTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         imageTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
@@ -66,11 +74,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func title(data:Title){
         DispatchQueue.main.async {
-           self.titleLabel.text = data.mainTitle
+            self.titleLabel.text = data.mainTitle
         }
-        
     }
     
+    //getting data for table view 
     func getTableData(data: [TestModel]){
         for items in data{
             if let description = items.description
@@ -84,7 +92,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             if let title = items.title
             {
                 self.titleArr.append(title)
-            }  
+            }
         }
         DispatchQueue.main.async {
             self.imageTableView.reloadData()

@@ -14,12 +14,15 @@ class TestTableViewCell: UITableViewCell {
         let marginGuide = contentView.layoutMarginsGuide
         contentView.addSubview(nameLabel)
         contentView.addSubview(imageVw)
+        
+        //Adding layout for Title in cell
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 30)
         
+        //Adding layout for description in cell
         descriptionLabel = UILabel()
         contentView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +34,7 @@ class TestTableViewCell: UITableViewCell {
         descriptionLabel.sizeToFit()
         descriptionLabel.numberOfLines = 0
         
+        //Adding layout for images in cell
         imageVw.translatesAutoresizingMaskIntoConstraints = false
         imageVw.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         imageVw.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true

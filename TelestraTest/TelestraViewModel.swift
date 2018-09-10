@@ -5,6 +5,7 @@ protocol telestraViewModelDelegate:class{
     func getTableData(data: [TestModel])
     func title(data:Title)
 }
+
 class TelestraViewModel:serviceDelegate{
     
     var serviceObj = Service()
@@ -15,10 +16,12 @@ class TelestraViewModel:serviceDelegate{
         serviceObj.getAPIDetails()
     }
     
+    //processing data for main title
     func getTitle(title: Title){
         self.delegate?.title(data: title)
     }
     
+    // processing  data for table view and sending to viewcontroller
     func getApiDetails(jsonObject:[TestModel]){
         var itemArray = [TestModel]()
         for items in jsonObject{

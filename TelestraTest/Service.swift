@@ -11,6 +11,7 @@ class Service{
     var titleObj = Title()
     weak var delegate:serviceDelegate?
     
+    // service call
     func getAPIDetails(){
         
         var model = [TestModel]()
@@ -36,19 +37,15 @@ class Service{
                 if let data = text.data(using: .utf8) {
                     do {
                         guard let jsonObj = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {return}
-                        print(jsonObj)
                         if let title = jsonObj["title"] as! String?{
                             titleObject.mainTitle = title
                         }
                         guard let row = jsonObj["rows"] as? NSArray else {return}
-                        print(row)
-                        
                         for items in row{
                             var modelObj = TestModel()
                             guard let dictObject = items as? NSDictionary else{return}
                             if let description = dictObject["description"] as? String
                             {
-                                print(description)
                                 modelObj.description = description
                             }
                             if let photo = dictObject["imageHref"] as? String
@@ -62,7 +59,6 @@ class Service{
                             model.append(modelObj)
                             
                         }
-                        print(model.description)
                         self.delegate?.getApiDetails(jsonObject: model)
                         self.delegate?.getTitle(title: titleObject)
                     } catch {
@@ -72,7 +68,6 @@ class Service{
             }
         }
         task.resume()
-        
     }
 }
 
