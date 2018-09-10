@@ -100,9 +100,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.nameLabel.text = self.titleArr[indexPath.row]
         cell.nameLabel.backgroundColor = UIColor.gray
         cell.descriptionLabel.text = self.descriptionArr[indexPath.row]
-        DispatchQueue.global(qos: .background).async {
-            let value = self.imageArr[indexPath.row]
-            let url = URL(string: value)
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            let value = self?.imageArr[indexPath.row]
+            let url = URL(string: value!)
             if let data = try? Data(contentsOf: url!)
             {
                 if let finalimg:UIImage = UIImage(data: data){
