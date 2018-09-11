@@ -10,6 +10,7 @@
 		200D77314999B7E5462A01C6 /* Pods_TelestraTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACF4BD6AC34BFFE960A618D /* Pods_TelestraTestTests.framework */; };
 		9004E9D8213FC9F100C2B66D /* TelestraTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004E9D7213FC9F100C2B66D /* TelestraTestTests.swift */; };
 		9008501A214680B6008FA2B5 /* ReachibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90085019214680B6008FA2B5 /* ReachibilityManager.swift */; };
+		9008501F2147D6D5008FA2B5 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9008501E2147D6D5008FA2B5 /* AlertView.swift */; };
 		90091DBE214290B200CB766B /* TelestraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DBD214290B200CB766B /* TelestraViewModel.swift */; };
 		90091DC0214290EE00CB766B /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DBF214290EE00CB766B /* TestTableViewCell.swift */; };
 		90091DC22142911B00CB766B /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DC12142911B00CB766B /* TestModel.swift */; };
@@ -36,6 +37,7 @@
 		9004E9D7213FC9F100C2B66D /* TelestraTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelestraTestTests.swift; sourceTree = "<group>"; };
 		9004E9D9213FC9F100C2B66D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90085019214680B6008FA2B5 /* ReachibilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachibilityManager.swift; sourceTree = "<group>"; };
+		9008501E2147D6D5008FA2B5 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		90091DBD214290B200CB766B /* TelestraViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelestraViewModel.swift; sourceTree = "<group>"; };
 		90091DBF214290EE00CB766B /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		90091DC12142911B00CB766B /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		90FA1324212D4398000B02EF = {
 			isa = PBXGroup;
 			children = (
+				9008501E2147D6D5008FA2B5 /* AlertView.swift */,
 				90085019214680B6008FA2B5 /* ReachibilityManager.swift */,
 				90FA132F212D4398000B02EF /* TelestraTest */,
 				9004E9D6213FC9F100C2B66D /* TelestraTestTests */,
@@ -343,6 +346,7 @@
 				90091DC22142911B00CB766B /* TestModel.swift in Sources */,
 				9008501A214680B6008FA2B5 /* ReachibilityManager.swift in Sources */,
 				90091DBE214290B200CB766B /* TelestraViewModel.swift in Sources */,
+				9008501F2147D6D5008FA2B5 /* AlertView.swift in Sources */,
 				90FA1331212D4398000B02EF /* AppDelegate.swift in Sources */,
 				90091DC42142914200CB766B /* Service.swift in Sources */,
 			);

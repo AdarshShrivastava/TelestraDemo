@@ -2,7 +2,7 @@
 import UIKit
 import ReachabilitySwift
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,telestraViewModelDelegate{
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,telestraViewModelDelegate,AlertDelegate{
     
     var headerView:UIView!
     var titleLabel:UILabel!
@@ -13,10 +13,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var imageArr = [String]()
     
     var viewModelObject = TelestraViewModel()
+    var serviceObj = Service()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModelObject.delegate = self
+        serviceObj.protocolDelagate = self
         self.view.backgroundColor = UIColor.white
         
         //Adding refreshing control
@@ -103,6 +105,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         DispatchQueue.main.async {
             self.imageTableView.reloadData()
         }
+    }
+    
+    func presentPoPup(massage: String){
+        let alert = UIAlertController(title: "alert", message: massage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

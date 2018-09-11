@@ -7,10 +7,15 @@ protocol serviceDelegate:class{
     func getTitle(title: Title)
 }
 
+protocol AlertDelegate:class{
+    func presentPoPup(massage: String)
+}
+
 class Service{
     
     var titleObj = Title()
     weak var delegate:serviceDelegate?
+    weak var protocolDelagate:AlertDelegate?
     
     // service call
     func getAPIDetails(){
@@ -27,11 +32,12 @@ class Service{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil
                 else{
-                    print("network error")
+                    //print("network error")
+                    self.protocolDelagate?.presentPoPup(massage: "network Error")
                     return
             }
             guard let responseData = data else{
-                print("unable to get the data")
+                self.protocolDelagate?.presentPoPup(massage: "unable to get data")
                 return
             }
             if let text = String(data: responseData, encoding: String.Encoding.ascii)
@@ -64,7 +70,7 @@ class Service{
                         self.delegate?.getApiDetails(jsonObject: model)
                         self.delegate?.getTitle(title: titleObject)
                     } catch {
-                        print(error.localizedDescription)
+                        self.protocolDelagate?.presentPoPup(massage: error.localizedDescription)
                     }
                 }
             }
@@ -79,11 +85,14 @@ extension Service: NetworkStatusListener {
         
         switch status {
         case .notReachable:
-            debugPrint("ViewController: Network became unreachable")
+            //debugPrint("ViewController: Network became unreachable")
+            self.protocolDelagate?.presentPoPup(massage: "Network became unreachable")
         case .reachableViaWiFi:
-            debugPrint("ViewController: Network reachable through WiFi")
+            //debugPrint("ViewController: Network reachable through WiFi")
+            self.protocolDelagate?.presentPoPup(massage: "Network reachable through WiFi")
         case .reachableViaWWAN:
-            debugPrint("ViewController: Network reachable through Cellular Data")
+            //debugPrint("ViewController: Network reachable through Cellular Data")
+            self.protocolDelagate?.presentPoPup(massage: "Network reachable through Cellular Data")
         }
     }
 }
