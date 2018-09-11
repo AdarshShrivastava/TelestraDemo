@@ -1,5 +1,6 @@
 
 import UIKit
+import ReachabilitySwift
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,telestraViewModelDelegate{
     
@@ -67,9 +68,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
-    @objc func refresh(_ sender:Any){
-        imageTableView.reloadData()
-        refreshControl.endRefreshing()
+
+        @objc func refresh(_ sender:Any){
+        _ = TelestraViewModel()
+        DispatchQueue.main.async {
+            self.imageTableView.reloadData()
+             self.refreshControl.endRefreshing()
+        }
+       
     }
     
     func title(data:Title){

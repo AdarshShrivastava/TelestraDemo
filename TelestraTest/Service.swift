@@ -1,5 +1,6 @@
 
 import Foundation
+import ReachabilitySwift
 
 protocol serviceDelegate:class{
     func getApiDetails(jsonObject:[TestModel])
@@ -13,7 +14,8 @@ class Service{
     
     // service call
     func getAPIDetails(){
-        
+
+        ReachibilityManager.shared.addListener(listener: self)
         var model = [TestModel]()
         var titleObject = Title()
         let str = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
@@ -68,6 +70,21 @@ class Service{
             }
         }
         task.resume()
+    }
+}
+
+extension Service: NetworkStatusListener {
+    
+    func networkStatusDidChange(status: Reachability.NetworkStatus) {
+        
+        switch status {
+        case .notReachable:
+            debugPrint("ViewController: Network became unreachable")
+        case .reachableViaWiFi:
+            debugPrint("ViewController: Network reachable through WiFi")
+        case .reachableViaWWAN:
+            debugPrint("ViewController: Network reachable through Cellular Data")
+        }
     }
 }
 

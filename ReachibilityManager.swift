@@ -1,17 +1,17 @@
-//
-//  ReachibilityManager.swift
-//  TelestraTest
-//
-//  Created by Adarsh Shrivastava on 10/09/18.
-//  Copyright © 2018 Adarsh Shrivastava. All rights reserved.
-//
 
 import UIKit
 import ReachabilitySwift
 
+/// Protocol for listenig network status change
+public protocol NetworkStatusListener : class {
+    func networkStatusDidChange(status: Reachability.NetworkStatus)
+}
+
 public class ReachibilityManager: NSObject {
     
     static  let shared = ReachibilityManager()
+    
+    var listeners = [NetworkStatusListener]()
     
     var reachabilityStatus: Reachability.NetworkStatus = .notReachable
     
@@ -32,10 +32,19 @@ public class ReachibilityManager: NSObject {
         case .reachableViaWWAN:
             debugPrint("Network reachable through Cellular Data")
         }
+        
+        // Sending message to the delegate
+        for listener in listeners {
+            listener.networkStatusDidChange(status: reachability.currentReachabilityStatus)
+        }
     }
     
     
-    /// Starts monitoring the network availability status
+    /// Adds a new listener to the listeners array
+    func addListener(listener: NetworkStatusListener){
+        listeners.append(listener)
+    }
+    
     func startMonitoring() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.reachabilityChanged),
