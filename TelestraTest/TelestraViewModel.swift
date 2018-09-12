@@ -4,6 +4,7 @@ import Foundation
 protocol telestraViewModelDelegate:class{
     func getTableData(data: [TestModel])
     func title(data:Title)
+    func errorAlert(message:String)
 }
 
 class TelestraViewModel:serviceDelegate{
@@ -38,6 +39,10 @@ class TelestraViewModel:serviceDelegate{
             itemArray.append(itemObj)
         }
         self.delegate?.getTableData(data: itemArray)
+    }
+    
+    func presentPoPup(massage: String){
+        self.delegate?.errorAlert(message: massage)
     }
     
 }

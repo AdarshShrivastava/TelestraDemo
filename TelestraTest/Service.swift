@@ -5,9 +5,6 @@ import ReachabilitySwift
 protocol serviceDelegate:class{
     func getApiDetails(jsonObject:[TestModel])
     func getTitle(title: Title)
-}
-
-protocol AlertDelegate:class{
     func presentPoPup(massage: String)
 }
 
@@ -15,8 +12,7 @@ class Service{
     
     var titleObj = Title()
     weak var delegate:serviceDelegate?
-    weak var protocolDelagate:AlertDelegate?
-    
+
     // service call
     func getAPIDetails(){
 
@@ -32,17 +28,17 @@ class Service{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil
                 else{
-                    //print("network error")
-                    self.protocolDelagate?.presentPoPup(massage: "network Error")
+                    self.delegate?.presentPoPup(massage: "network Error")
                     return
             }
             guard let responseData = data else{
-                self.protocolDelagate?.presentPoPup(massage: "unable to get data")
+                self.delegate?.presentPoPup(massage: "unable to get data")
                 return
             }
             if let text = String(data: responseData, encoding: String.Encoding.ascii)
             {
                 if let data = text.data(using: .utf8) {
+
                     do {
                         guard let jsonObj = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {return}
                         if let title = jsonObj["title"] as! String?{
@@ -70,7 +66,7 @@ class Service{
                         self.delegate?.getApiDetails(jsonObject: model)
                         self.delegate?.getTitle(title: titleObject)
                     } catch {
-                        self.protocolDelagate?.presentPoPup(massage: error.localizedDescription)
+                        self.delegate?.presentPoPup(massage: error.localizedDescription)
                     }
                 }
             }
@@ -85,14 +81,12 @@ extension Service: NetworkStatusListener {
         
         switch status {
         case .notReachable:
-            //debugPrint("ViewController: Network became unreachable")
-            self.protocolDelagate?.presentPoPup(massage: "Network became unreachable")
+            self.delegate?.presentPoPup(massage: "Network unreachable")
         case .reachableViaWiFi:
-            //debugPrint("ViewController: Network reachable through WiFi")
-            self.protocolDelagate?.presentPoPup(massage: "Network reachable through WiFi")
+            break
         case .reachableViaWWAN:
-            //debugPrint("ViewController: Network reachable through Cellular Data")
-            self.protocolDelagate?.presentPoPup(massage: "Network reachable through Cellular Data")
+            break
+            
         }
     }
 }
