@@ -20,7 +20,7 @@ class TestTableViewCell: UITableViewCell {
         nameLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 30)
+        nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         //Adding layout for description in cell
         descriptionLabel = UILabel()
