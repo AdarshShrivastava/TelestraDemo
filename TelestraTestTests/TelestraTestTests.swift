@@ -12,14 +12,18 @@ import XCTest
 
 class TelestraTestTests: XCTestCase {
     
-    var vc:ViewController!
+    var vc = ViewController()
     
     //Test to find whether controller has a table view
     func testControllerHasTableView() {
-         let controller = ViewController()
-        controller.loadViewIfNeeded()
+        vc.loadViewIfNeeded()
         
-        XCTAssertNotNil(controller.imageTableView, "Controller should have a tableview")
+        XCTAssertNotNil(vc.imageTableView, "Controller should have a tableview")
+    }
+    
+    
+    func testTableViewConfromsToTableViewDelegateProtocol() {
+        XCTAssertTrue(vc.conforms(to: UITableViewDelegate.self))
     }
     
 }
