@@ -11,9 +11,11 @@ class TestTableViewCell: UITableViewCell {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         nameLabel = UILabel()
         imageVw = UIImageView()
+        descriptionLabel = UILabel()
         let marginGuide = contentView.layoutMarginsGuide
         contentView.addSubview(nameLabel)
         contentView.addSubview(imageVw)
+        contentView.addSubview(descriptionLabel)
         
         //Adding layout for Title in cell
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -22,9 +24,18 @@ class TestTableViewCell: UITableViewCell {
         nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
+        //Adding layout for images in cell
+        imageVw.translatesAutoresizingMaskIntoConstraints = false
+        imageVw.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
+        imageVw.topAnchor.constraint(equalTo: descriptionLabel.topAnchor).isActive = true
+        imageVw.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageVw.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageVw.trailingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor).isActive = true
+        imageVw.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        imageVw.contentMode = .scaleAspectFit
+
+        
         //Adding layout for description in cell
-        descriptionLabel = UILabel()
-        contentView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.leadingAnchor.constraint(equalTo: imageVw.trailingAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
@@ -34,14 +45,7 @@ class TestTableViewCell: UITableViewCell {
         descriptionLabel.sizeToFit()
         descriptionLabel.numberOfLines = 0
         
-        //Adding layout for images in cell
-        imageVw.translatesAutoresizingMaskIntoConstraints = false
-        imageVw.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
-        imageVw.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        imageVw.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        imageVw.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
-        imageVw.contentMode = .scaleAspectFit
-    }
+            }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
