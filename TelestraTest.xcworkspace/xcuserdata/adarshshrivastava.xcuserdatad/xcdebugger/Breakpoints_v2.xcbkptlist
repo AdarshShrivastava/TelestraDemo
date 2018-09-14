@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TelestraTest/Service.swift"
-            timestampString = "558430589.280041"
+            timestampString = "558598885.628108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "getAPIDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TelestraTest/Service.swift"
-            timestampString = "558430589.280041"
+            timestampString = "558598885.628108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "getAPIDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TelestraTest/Service.swift"
-            timestampString = "558430589.280041"
+            timestampString = "558598885.628108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -282,7 +282,7 @@
                   moduleName = "TelestraTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adarshshrivastava/TelestraTest/TelestraTest/ViewController.swift"
-                  timestampString = "558430303.207415"
+                  timestampString = "558598589.533069"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -297,7 +297,7 @@
                   moduleName = "TelestraTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adarshshrivastava/TelestraTest/TelestraTest/ViewController.swift"
-                  timestampString = "558430303.20991"
+                  timestampString = "558598589.534976"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -312,7 +312,7 @@
                   moduleName = "TelestraTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adarshshrivastava/TelestraTest/TelestraTest/ViewController.swift"
-                  timestampString = "558430303.212791"
+                  timestampString = "558598589.536811"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -327,7 +327,7 @@
                   moduleName = "TelestraTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adarshshrivastava/TelestraTest/TelestraTest/ViewController.swift"
-                  timestampString = "558430303.215418"
+                  timestampString = "558598589.538635"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -382,6 +382,86 @@
             startingLineNumber = "108"
             endingLineNumber = "108"
             landmarkName = "errorAlert(message:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TelestraTest/Service.swift"
+            timestampString = "558598885.628108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getAPIDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReachabilitySwift/Reachability/Reachability.swift"
+            timestampString = "558597689.278212"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "Reachability"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReachabilitySwift/Reachability/Reachability.swift"
+            timestampString = "558597720.189647"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "NetworkStatus"
+            landmarkType = "13">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReachibilityManager.swift"
+            timestampString = "558598458.511474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "startMonitoring()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReachibilityManager.swift"
+            timestampString = "558598496.1040519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "reachabilityChanged(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

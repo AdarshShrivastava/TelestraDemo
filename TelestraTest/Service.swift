@@ -17,6 +17,7 @@ class Service{
     func getAPIDetails(){
 
         ReachibilityManager.shared.addListener(listener: self)
+        ReachibilityManager.shared.startMonitoring()
         var model = [TestModel]()
         var titleObject = Title()
         let str = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
