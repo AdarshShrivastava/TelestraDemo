@@ -18,6 +18,8 @@ class Service{
 
         ReachibilityManager.shared.addListener(listener: self)
         ReachibilityManager.shared.startMonitoring()
+        
+        if(ReachibilityManager.shared.isInternetAvailable()){
         var model = [TestModel]()
         var titleObject = Title()
         let str = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
@@ -73,6 +75,12 @@ class Service{
             }
         }
         task.resume()
+            
+        }
+        
+        else{
+            self.delegate?.presentPoPup(massage: "Network not available")
+        }
     }
 }
 

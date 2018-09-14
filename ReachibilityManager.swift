@@ -1,6 +1,7 @@
 
 import UIKit
 import ReachabilitySwift
+import SystemConfiguration
 
 /// Protocol for listenig network status change
 public protocol NetworkStatusListener : class {
@@ -16,6 +17,7 @@ public class ReachibilityManager: NSObject {
     var reachabilityStatus: Reachability.NetworkStatus = .notReachable
     
     var isNetworkAvailable : Bool {
+        
         return reachabilityStatus != .notReachable
     }
     
@@ -64,5 +66,25 @@ public class ReachibilityManager: NSObject {
                                                   name: ReachabilityChangedNotification,
                                                   object: reachability)
     }
-
+    
+    func isInternetAvailable() -> Bool
+    {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        return (isReachable && !needsConnection)
+    }
 }
