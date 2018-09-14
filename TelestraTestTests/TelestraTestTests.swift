@@ -26,4 +26,10 @@ class TelestraTestTests: XCTestCase {
         XCTAssertTrue(vc.conforms(to: UITableViewDelegate.self))
     }
     
+    func testToverifyTheTitleLabel() {
+        let expectation = self.expectation(description: "loading")
+        expectation.fulfill()
+        waitForExpectations(timeout: 20, handler: nil)
+        XCTAssertEqual(self.vc.titleLabel.text, "About Canada")
+    }
 }
