@@ -10,42 +10,43 @@ class TestTableViewCell: UITableViewCell {
     override init(style:UITableViewCellStyle, reuseIdentifier:String?) {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         nameLabel = UILabel()
-        imageVw = UIImageView()
         descriptionLabel = UILabel()
+        imageVw = UIImageView()
         let marginGuide = contentView.layoutMarginsGuide
         contentView.addSubview(nameLabel)
         contentView.addSubview(imageVw)
-        contentView.addSubview(descriptionLabel)
-        
-        //Adding layout for Title in cell
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         //Adding layout for images in cell
         imageVw.translatesAutoresizingMaskIntoConstraints = false
         imageVw.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
-        imageVw.topAnchor.constraint(equalTo: descriptionLabel.topAnchor).isActive = true
-        imageVw.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        imageVw.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        imageVw.trailingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor).isActive = true
-        imageVw.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+    
+        imageVw.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        imageVw.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        imageVw.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        //imageVw.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         imageVw.contentMode = .scaleAspectFit
-
+        
+        //Adding layout for Title in cell
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 30).isActive = true//.constraint(equalTo: marginGuide.topAnchor).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
+        //nameLabel.heightAnchor.constraint(equalToConstant: 30)
         
         //Adding layout for description in cell
+        
+        contentView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.leadingAnchor.constraint(equalTo: imageVw.trailingAnchor).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: imageVw.bottomAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         descriptionLabel.textAlignment = .left
         descriptionLabel.sizeToFit()
         descriptionLabel.numberOfLines = 0
         
-            }
+        
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
@@ -54,7 +55,7 @@ class TestTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

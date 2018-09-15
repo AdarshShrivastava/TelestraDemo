@@ -31,6 +31,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //Adding Table View to load the data with
         imageTableView = UITableView()
+        imageTableView.separatorStyle = .singleLine
         imageTableView.register(TestTableViewCell.self, forCellReuseIdentifier:"Cell")
         imageTableView.dataSource = self
         imageTableView.delegate = self
@@ -118,7 +119,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TestTableViewCell
         cell.nameLabel.text = self.titleArr[indexPath.row]
-        cell.nameLabel.backgroundColor = UIColor.gray
+        cell.nameLabel.textAlignment = .center
+        cell.nameLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 25.0)
         cell.descriptionLabel.text = self.descriptionArr[indexPath.row]
         DispatchQueue.global(qos: .background).async { [weak self] in
             let value = self?.imageArr[indexPath.row]
