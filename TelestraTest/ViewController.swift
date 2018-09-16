@@ -2,7 +2,7 @@
 import UIKit
 import ReachabilitySwift
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,telestraViewModelDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TelestraViewModelDelegate{
     
     var headerView:UIView!
     var titleLabel:UILabel!
@@ -11,9 +11,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var titleArr: [String] = []
     var descriptionArr = [String]()
     var imageArr = [String]()
+    var dataArray = [TestModel]()
     
     var viewModelObject = TelestraViewModel()
-    
+    var titleStr: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModelObject.delegate = self
@@ -65,42 +67,36 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         imageTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         imageTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive  = true
         imageTableView.topAnchor.constraint(equalTo: self.headerView.bottomAnchor).isActive = true
+        self.imageTableView.separatorColor = UIColor.black
+        imageTableView.separatorStyle = .singleLine
         imageTableView.addSubview(refreshControl)
         
     }
     
-
-        @objc func refresh(_ sender:Any){
-        _ = TelestraViewModel()
-        DispatchQueue.main.async {
-            self.imageTableView.reloadData()
-             self.refreshControl.endRefreshing()
-        }
-       
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.refresh(())
     }
     
-    func title(data:Title){
+
+    @objc func refresh(_ sender:Any) {
+        self.viewModelObject.makeTheAPIcall()
         DispatchQueue.main.async {
-            self.titleLabel.text = data.mainTitle
+            self.imageTableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    func title(titleStr: String) {
+        DispatchQueue.main.async {
+            self.titleLabel.text = titleStr
+            self.titleStr = titleStr
         }
     }
     
     //getting data for table view 
-    func getTableData(data: [TestModel]){
-        for items in data{
-            if let description = items.description
-            {
-                self.descriptionArr.append(description)
-            }
-            if let image = items.image
-            {
-                self.imageArr.append(image)
-            }
-            if let title = items.title
-            {
-                self.titleArr.append(title)
-            }
-        }
+    func getTableData(dataArray: [TestModel]){
+        self.dataArray = dataArray
         DispatchQueue.main.async {
             self.imageTableView.reloadData()
         }
@@ -113,28 +109,56 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageArr.count
+        return self.dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TestTableViewCell
-        cell.nameLabel.text = self.titleArr[indexPath.row]
-        cell.nameLabel.textAlignment = .center
+        let currentObject = self.dataArray[indexPath.row]
+        cell.nameLabel.text = currentObject.title
+        cell.nameLabel.textAlignment = .left
         cell.nameLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 25.0)
-        cell.descriptionLabel.text = self.descriptionArr[indexPath.row]
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            let value = self?.imageArr[indexPath.row]
-            let url = URL(string: value!)
-            if let data = try? Data(contentsOf: url!)
-            {
-                if let finalimg:UIImage = UIImage(data: data){
-                    DispatchQueue.main.async{
-                        cell.imageVw.image = finalimg
+        cell.descriptionLabel.text = currentObject.description
+        if currentObject.cachedImage != nil {
+            cell.imageVw.image = currentObject.cachedImage
+        }
+        else if let imageRefLink = currentObject.imageLink {
+            DispatchQueue.global(qos: .background).async { [weak self] in
+                
+                guard let strongSelf = self else {
+                    DispatchQueue.main.async {
+                        cell.imageVw.image = UIImage(named: "noimage");
+                    }
+                    return
+                }
+                let imageUrl = URL(string: imageRefLink)
+                do {
+                    if let data = try? Data(contentsOf: imageUrl!)
+                    {
+                        if let finalimg:UIImage = UIImage(data: data) {
+                            
+                            var cachedObj = strongSelf.dataArray[indexPath.row]
+                            cachedObj.cachedImage = finalimg
+                            DispatchQueue.main.async {
+                                cell.imageVw.image = finalimg
+                            }
+                        }
+                        else {
+                            DispatchQueue.main.async {
+                                cell.imageVw.image = UIImage(named: "noimage");
+                            }
+                        }
+                    }
+                    else {
+                        DispatchQueue.main.async {
+                            cell.imageVw.image = UIImage(named: "noimage")
+                        }
                     }
                 }
-                
             }
-            
+        }
+        else {
+            cell.imageVw.image = UIImage(named: "noimage")
         }
         cell.sizeToFit()
         return cell

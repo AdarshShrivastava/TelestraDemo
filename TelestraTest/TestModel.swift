@@ -1,13 +1,11 @@
 
 import Foundation
+import UIKit
 
 struct TestModel{
     var title:String?
     var description:String?
-    var image:String?
-    var mainTitle:String?
+    var imageLink:String?
+    var cachedImage:UIImage?
 }
 
-struct Title{
-    var mainTitle:String?
-}

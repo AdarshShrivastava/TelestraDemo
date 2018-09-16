@@ -1,44 +1,33 @@
 
 import Foundation
 
-protocol telestraViewModelDelegate:class{
-    func getTableData(data: [TestModel])
-    func title(data:Title)
+protocol TelestraViewModelDelegate:class{
+    func getTableData(dataArray: [TestModel])
+    func title(titleStr:String)
     func errorAlert(message:String)
 }
 
 class TelestraViewModel:serviceDelegate{
     
     var serviceObj = Service()
-    weak var delegate:telestraViewModelDelegate?
+    weak var delegate:TelestraViewModelDelegate?
     
     init(){
-        serviceObj.delegate = self
+        serviceObj.serviceDelegate = self
+    }
+    
+    func makeTheAPIcall() {
         serviceObj.getAPIDetails()
     }
     
     //processing data for main title
-    func getTitle(title: Title){
-        self.delegate?.title(data: title)
+    func getTitle(title: String){
+        self.delegate?.title(titleStr: title)
     }
     
     // processing  data for table view and sending to viewcontroller
-    func getApiDetails(jsonObject:[TestModel]){
-        var itemArray = [TestModel]()
-        for items in jsonObject{
-            var itemObj = TestModel()
-            if let item = items.description{
-                itemObj.description = item
-            }
-            if let item = items.image{
-                itemObj.image = item
-            }
-            if let item = items.title{
-                itemObj.title = item
-            }
-            itemArray.append(itemObj)
-        }
-        self.delegate?.getTableData(data: itemArray)
+    func getApiDetails(jsonObject:[TestModel]) {
+         self.delegate?.getTableData(dataArray: jsonObject)
     }
     
     func presentPoPup(massage: String){

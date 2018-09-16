@@ -21,20 +21,17 @@ class TestTableViewCell: UITableViewCell {
         imageVw.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
     
         imageVw.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        imageVw.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        imageVw.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        //imageVw.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        imageVw.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageVw.heightAnchor.constraint(equalToConstant: 100).isActive = true
         imageVw.contentMode = .scaleAspectFit
         
         //Adding layout for Title in cell
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 30).isActive = true//.constraint(equalTo: marginGuide.topAnchor).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 30).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        //nameLabel.heightAnchor.constraint(equalToConstant: 30)
         
         //Adding layout for description in cell
-        
         contentView.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
@@ -44,7 +41,6 @@ class TestTableViewCell: UITableViewCell {
         descriptionLabel.textAlignment = .left
         descriptionLabel.sizeToFit()
         descriptionLabel.numberOfLines = 0
-        
         
     }
     
