@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200D77314999B7E5462A01C6 /* Pods_TelestraTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACF4BD6AC34BFFE960A618D /* Pods_TelestraTestTests.framework */; };
-		9004E9D8213FC9F100C2B66D /* TelestraTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004E9D7213FC9F100C2B66D /* TelestraTestTests.swift */; };
+		90060F85214F54EF00D52177 /* TelestraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90060F84214F54EF00D52177 /* TelestraTests.swift */; };
 		9008501A214680B6008FA2B5 /* ReachibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90085019214680B6008FA2B5 /* ReachibilityManager.swift */; };
 		90091DBE214290B200CB766B /* TelestraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DBD214290B200CB766B /* TelestraViewModel.swift */; };
 		90091DC0214290EE00CB766B /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90091DBF214290EE00CB766B /* TestTableViewCell.swift */; };
@@ -33,8 +33,8 @@
 /* Begin PBXFileReference section */
 		15570A101D144E3D32A59058 /* Pods-TelestraTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TelestraTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TelestraTestTests/Pods-TelestraTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9004E9D5213FC9F100C2B66D /* TelestraTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelestraTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9004E9D7213FC9F100C2B66D /* TelestraTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelestraTestTests.swift; sourceTree = "<group>"; };
 		9004E9D9213FC9F100C2B66D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90060F84214F54EF00D52177 /* TelestraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelestraTests.swift; sourceTree = "<group>"; };
 		90085019214680B6008FA2B5 /* ReachibilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachibilityManager.swift; sourceTree = "<group>"; };
 		90091DBD214290B200CB766B /* TelestraViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelestraViewModel.swift; sourceTree = "<group>"; };
 		90091DBF214290EE00CB766B /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		9004E9D6213FC9F100C2B66D /* TelestraTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				9004E9D7213FC9F100C2B66D /* TelestraTestTests.swift */,
+				90060F84214F54EF00D52177 /* TelestraTests.swift */,
 				9004E9D9213FC9F100C2B66D /* Info.plist */,
 			);
 			path = TelestraTestTests;
@@ -330,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9004E9D8213FC9F100C2B66D /* TelestraTestTests.swift in Sources */,
+				90060F85214F54EF00D52177 /* TelestraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

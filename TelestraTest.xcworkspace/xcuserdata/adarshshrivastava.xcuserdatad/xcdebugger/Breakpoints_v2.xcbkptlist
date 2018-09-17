@@ -22,13 +22,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TelestraTestTests/TelestraTestTests.swift"
-            timestampString = "558772719.000578"
+            timestampString = "558847317.894088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "testToVerifyTheTitleLabel()"
-            landmarkType = "7">
+            startingLineNumber = "23"
+            endingLineNumber = "23">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
