@@ -38,6 +38,16 @@
                ReferencedContainer = "container:TelestraTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "90082EB42152129300767ED3"
+               BuildableName = "TelestraDataTest.xctest"
+               BlueprintName = "TelestraDataTest"
+               ReferencedContainer = "container:TelestraTest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

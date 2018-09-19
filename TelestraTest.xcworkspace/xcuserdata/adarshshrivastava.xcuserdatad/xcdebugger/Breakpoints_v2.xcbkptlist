@@ -29,5 +29,77 @@
             endingLineNumber = "23">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.IDETestFailureBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            breakpointStackSelectionBehavior = "1">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TelestraTestTests/TelestraTests.swift"
+            timestampString = "559026185.194382"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "testToAPICompletes()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TelestraTestTests.TelestraTests.testToAPICompletes () -&gt; ()"
+                  moduleName = "TelestraTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adarshshrivastava/TelestraTest/TelestraTestTests/TelestraTests.swift"
+                  timestampString = "559026292.603111"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "2121">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TelestraTestTests.TelestraTests.(testToAPICompletes () -&gt; ()).(implicit closure #2)"
+                  moduleName = "TelestraTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adarshshrivastava/TelestraTest/TelestraTestTests/TelestraTests.swift"
+                  timestampString = "559026292.60647"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TelestraTestTests.TelestraTests.(testToAPICompletes () -&gt; ()).(implicit closure #3)"
+                  moduleName = "TelestraTestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adarshshrivastava/TelestraTest/TelestraTestTests/TelestraTests.swift"
+                  timestampString = "559026292.611061"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

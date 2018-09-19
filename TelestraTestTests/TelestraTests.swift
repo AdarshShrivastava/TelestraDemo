@@ -56,6 +56,25 @@ class TelestraTests: XCTestCase{
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+    //fail faster
+    
+    func testToAPICompletes(){
+        let url = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")
+        let promise = expectation(description: "completion Handler invoked")
+        var statusCode:Int?
+        var responseError:Error?
+        let datatask = sessionUnderTest.dataTask(with: url!) { (data, response, error) in
+            statusCode = (response as? HTTPURLResponse)?.statusCode
+            responseError = error
+            promise.fulfill()
+        }
+        datatask.resume()
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertNil(responseError)
+        XCTAssertEqual(statusCode, 200)
+    }
+    
+        
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

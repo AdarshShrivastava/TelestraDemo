@@ -28,6 +28,13 @@
 			remoteGlobalIDString = 90FA132C212D4398000B02EF;
 			remoteInfo = TelestraTest;
 		};
+		90082EBA2152129300767ED3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90FA1325212D4398000B02EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90FA132C212D4398000B02EF;
+			remoteInfo = TelestraTest;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,7 @@
 		9004E9D5213FC9F100C2B66D /* TelestraTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelestraTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9004E9D9213FC9F100C2B66D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90060F84214F54EF00D52177 /* TelestraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelestraTests.swift; sourceTree = "<group>"; };
+		90082EB52152129300767ED3 /* TelestraDataTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelestraDataTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90085019214680B6008FA2B5 /* ReachibilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachibilityManager.swift; sourceTree = "<group>"; };
 		90091DBD214290B200CB766B /* TelestraViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelestraViewModel.swift; sourceTree = "<group>"; };
 		90091DBF214290EE00CB766B /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
@@ -58,6 +66,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				200D77314999B7E5462A01C6 /* Pods_TelestraTestTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90082EB22152129300767ED3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +124,7 @@
 			children = (
 				90FA132D212D4398000B02EF /* TelestraTest.app */,
 				9004E9D5213FC9F100C2B66D /* TelestraTestTests.xctest */,
+				90082EB52152129300767ED3 /* TelestraDataTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +207,24 @@
 			productReference = 9004E9D5213FC9F100C2B66D /* TelestraTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		90082EB42152129300767ED3 /* TelestraDataTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90082EBE2152129300767ED3 /* Build configuration list for PBXNativeTarget "TelestraDataTest" */;
+			buildPhases = (
+				90082EB12152129300767ED3 /* Sources */,
+				90082EB22152129300767ED3 /* Frameworks */,
+				90082EB32152129300767ED3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90082EBB2152129300767ED3 /* PBXTargetDependency */,
+			);
+			name = TelestraDataTest;
+			productName = TelestraDataTest;
+			productReference = 90082EB52152129300767ED3 /* TelestraDataTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		90FA132C212D4398000B02EF /* TelestraTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90FA133F212D4398000B02EF /* Build configuration list for PBXNativeTarget "TelestraTest" */;
@@ -225,6 +259,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 90FA132C212D4398000B02EF;
 					};
+					90082EB42152129300767ED3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 90FA132C212D4398000B02EF;
+					};
 					90FA132C212D4398000B02EF = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -246,12 +285,20 @@
 			targets = (
 				90FA132C212D4398000B02EF /* TelestraTest */,
 				9004E9D4213FC9F100C2B66D /* TelestraTestTests */,
+				90082EB42152129300767ED3 /* TelestraDataTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9004E9D3213FC9F100C2B66D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90082EB32152129300767ED3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,6 +381,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		90082EB12152129300767ED3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90FA1329212D4398000B02EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,6 +409,11 @@
 			isa = PBXTargetDependency;
 			target = 90FA132C212D4398000B02EF /* TelestraTest */;
 			targetProxy = 9004E9DA213FC9F100C2B66D /* PBXContainerItemProxy */;
+		};
+		90082EBB2152129300767ED3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90FA132C212D4398000B02EF /* TelestraTest */;
+			targetProxy = 90082EBA2152129300767ED3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -381,6 +440,32 @@
 				INFOPLIST_FILE = TelestraTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.TelestraTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelestraTest.app/TelestraTest";
+			};
+			name = Release;
+		};
+		90082EBC2152129300767ED3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TelestraDataTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.TelestraDataTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelestraTest.app/TelestraTest";
+			};
+			name = Debug;
+		};
+		90082EBD2152129300767ED3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TelestraDataTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.TelestraDataTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelestraTest.app/TelestraTest";
@@ -514,6 +599,15 @@
 			buildConfigurations = (
 				9004E9DC213FC9F100C2B66D /* Debug */,
 				9004E9DD213FC9F100C2B66D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90082EBE2152129300767ED3 /* Build configuration list for PBXNativeTarget "TelestraDataTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90082EBC2152129300767ED3 /* Debug */,
+				90082EBD2152129300767ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
